@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+--The DOM means Document Object Model and is the representation of the HTML elements of the web page application..
+
 2. What is an event?
+
+--An event is every user interaction with a site like a click, scrolling the page, or even just pressing a key on the keyboard..
 
 3. What is an event listener?
 
+--An event listener is a callback function that specifically listens for certain events to happen so it can fire off..
+
 4. Why would we convert a NodeList into an Array?
 
+--We convert it so we can have access to using the .forEach method..
+
 5. What is a component?
+
+--A component is the building block to modern app development in being able to use HTML, CSS, and JavaScript in a reusable way to code to make is faster and DRY..
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -84,6 +94,6 @@ After finishing your required elements, you can push your work further. These go
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` branch (student's  Repo). **Please don't merge your own pull request**
+- [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` branch (student's Repo). **Please don't merge your own pull request**
 - [ ] Add your team lead as a reviewer on the pull-request
 - [ ] Your team lead will count the project as complete after receiving your pull-request
