@@ -16,12 +16,12 @@ axios
   .get("https://lambda-times-api.herokuapp.com/topics")
   .then((response) => {
     //with the .then I can get the response from the server with the data needed and console.log it
-    console.log(response);
+    // console.log(response);
     const tabsArr = response.data.topics;
-    console.log(tabsArr);
+    // console.log(tabsArr);
     tabsArr.forEach((tabs) => {
       const subject = tabsTopics(tabs);
-      console.log(subject);
+      //   console.log(subject);
       tabsContainer.appendChild(subject);
     });
   })
