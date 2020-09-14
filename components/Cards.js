@@ -66,5 +66,9 @@ const articleCard = (article) => {
   img.src = article.authorPhoto;
   author.textContent = article.authorName;
 
+  articleCard.addEventListener("click", () => {
+    console.log(article.headline);
+  });
+
   return articleCard;
 };
