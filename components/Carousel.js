@@ -22,3 +22,26 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+const carouselContainer = document.querySelector(".carousel-container");
+
+function Carousel() {
+  const imgArray = [];
+  const carouselDiv = document.createElement("div");
+  const leftButton = document.createElement("div");
+  const img = document.createElement("img");
+  const rightButton = document.createElement("div");
+
+  carouselDiv.appendChild(leftButton);
+  carouselDiv.appendChild(img);
+  carouselDiv.appendChild(rightButton);
+
+  carouselDiv.classList.add("carousel");
+  leftButton.classList.add("left-button");
+  rightButton.classList.add("right-button");
+
+  leftButton.addEventListener("click", () => {});
+
+  leftButton.textContent = "<";
+  rightButton.textContent = ">";
+}

@@ -22,6 +22,7 @@
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
 const cardContainer = document.querySelector(".cards-container");
+const errorContainer = document.querySelector(".errors-container");
 
 axios
   .get("https://lambda-times-api.herokuapp.com/articles")
@@ -30,17 +31,21 @@ axios
     const cardArr = response.data.articles;
     console.log("These are the cardsArr, ", cardArr);
 
-    const articleObject = Object.values(cardArr);
-    console.log("These are the Objects, ", articleObject);
+    //Object.values gives you the values inside the object and creates a new array for you
+    const articles = Object.values(cardArr);
+    console.log("These are the Objects, ", articles);
 
-    articleObject.forEach((array) => {
+    //can only use a forEach on the array NOT a Object itself
+    articles.forEach((array) => {
       array.forEach((card) => {
         cardContainer.appendChild(articleCard(card));
       });
     });
   })
   .catch((error) => {
-    console.log("This is the error --> ", error);
+    const requestErr = error.request.status;
+    console.log("This is the error --> ", requestErr);
+    errorContainer.appendChild(errorMessage(error));
   });
 
 const articleCard = (article) => {
@@ -64,11 +69,24 @@ const articleCard = (article) => {
 
   headline.textContent = article.headline;
   img.src = article.authorPhoto;
-  author.textContent = article.authorName;
+  author.textContent = "By: " + article.authorName;
 
   articleCard.addEventListener("click", () => {
     console.log(article.headline);
   });
 
   return articleCard;
+};
+
+//Even though I already submitted my Sprint wanted to work on the stretch goal to show the user the error on the screen..
+
+const errorMessage = (status) => {
+  //Creating my component for the axios .catch error and producing the status..
+  const errDiv = document.createElement("div");
+  const message = document.createElement("h3");
+
+  errDiv.appendChild(message);
+  message.textContent = `This is producing the following ${status}`;
+
+  return errDiv;
 };
